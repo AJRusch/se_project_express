@@ -1,0 +1,14 @@
+{
+  "name": "se_project_express",
+  "version": "0.1.0",
+  "description": "express-app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Austin Rusch\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
