@@ -1,10 +1,12 @@
-require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const { errors } = require("celebrate");
+require("dotenv").config();
+const helmet = require("helmet");
 const mainRouter = require("./routes/index");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
-const { errors } = require("celebrate");
+
 const errorHandler = require("./middlewares/error-handler");
 
 const app = express();
@@ -16,6 +18,8 @@ mongoose
     console.log("Connected to DB");
   })
   .catch(console.error);
+
+app.use(helmet());
 app.use(cors());
 app.get("/crash-test", () => {
   setTimeout(() => {
